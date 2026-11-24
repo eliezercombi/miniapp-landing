@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 1. EDIT: page title, description and share preview -->
+  <title>Brew Bar — order coffee ahead, right inside Telegram</title>
+  <meta name="description" content="Order and pay for your coffee in a Telegram chat and pick it up when it is ready. No app to install, no account to create.">
+  <meta property="og:title" content="Brew Bar — order coffee ahead, right inside Telegram">
+  <meta property="og:description" content="Order and pay in a Telegram chat. Pick up when it is ready.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230f7ab5'/%3E%3Cpath d='M9 12h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM20 13.5h1.5a2.5 2.5 0 0 1 0 5H20' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Applies the saved or system theme before the first paint, so the page never flashes. -->
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap top__in">
+      <!-- 2. EDIT: logo mark and name -->
+      <a class="brand" href="#top" aria-label="Brew Bar, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9"/><path d="M9 12h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM20 13.5h1.5a2.5 2.5 0 0 1 0 5H20"/></svg>
+        Brew Bar
+      </a>
+      <nav class="top__nav" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="top__tools">
+        <button class="theme" id="theme" type="button" aria-label="Switch theme">
+          <svg class="theme__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+          <svg class="theme__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+        </button>
+        <!-- 3. EDIT: every link with class "open" is your Mini App link. See README for the formats. -->
+        <a class="btn btn--tg btn--sm open" href="https://t.me/your_bot/app">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.6 11.3 20.4 4.1c.8-.3 1.5.4 1.3 1.2l-3 14.2c-.2.9-1.2 1.2-1.9.7l-4.6-3.4-2.5 2.4c-.4.4-1.1.1-1.1-.5v-4.1l8.1-7.4-10 6.1-4.2-1.3c-.9-.3-.9-1.4.1-1.7Z"/></svg>
+          Open in Telegram
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero__in">
+        <div class="hero__copy">
+          <p class="pill"><span></span> Runs inside Telegram. Nothing to install.</p>
+          <h1>Your coffee, ordered from a chat.</h1>
+          <p class="lede">Pick a drink, choose how you like it and pay in the same Telegram chat. It is ready when you walk in.</p>
+          <div class="cta">
+            <a class="btn btn--tg open" href="https://t.me/your_bot/app">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.6 11.3 20.4 4.1c.8-.3 1.5.4 1.3 1.2l-3 14.2c-.2.9-1.2 1.2-1.9.7l-4.6-3.4-2.5 2.4c-.4.4-1.1.1-1.1-.5v-4.1l8.1-7.4-10 6.1-4.2-1.3c-.9-.3-.9-1.4.1-1.7Z"/></svg>
+              Open in Telegram
+            </a>
+            <a class="btn btn--ghost" href="#how">See how it works</a>
+          </div>
+          <!-- 4. EDIT or delete: three short proof points -->
+          <ul class="proof">
+            <li><strong>20 seconds</strong><span>from menu to paid order</span></li>
+            <li><strong>0 downloads</strong><span>it opens in the chat</span></li>
+            <li><strong>Stars, TON, card</strong><span>pay the way you like</span></li>
+          </ul>
+        </div>
+
+        <!-- 5. EDIT: the phone shows your Mini App live. Put its https address in src,
+             or replace the iframe with <img src="screenshot.png" alt="..."> -->
+        <div class="hero__show">
+          <div class="phone">
+            <div class="phone__bar"><i></i><b>Brew Bar</b><span>mini app</span></div>
+            <iframe class="phone__view" src="https://eliezercombi.github.io/brew-bar/" title="Brew Bar mini app, live preview" loading="lazy"></iframe>
+          </div>
+          <p class="hero__hint">This preview is live. Try it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="how">
+      <div class="wrap">
+        <p class="label">How it works</p>
+        <h2>Three taps between you and a flat white.</h2>
+        <ol class="steps">
+          <li><i>1</i><h3>Open the chat</h3><p>Tap the button on this page or find the bot in Telegram. The menu opens right there.</p></li>
+          <li><i>2</i><h3>Build your order</h3><p>Size, milk, extras. The price updates as you choose, and your usual is one tap away next time.</p></li>
+          <li><i>3</i><h3>Pay and pick up</h3><p>Pay with Stars, TON or a card. You get a message the moment your order is ready.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <p class="label">Features</p>
+        <h2>Small things that make it feel native.</h2>
+        <div class="grid">
+          <article class="card card--wide">
+            <h3>Looks like your Telegram</h3>
+            <p>Light, dark or a custom theme: the app picks up the colours you already use, so nothing looks out of place.</p>
+            <div class="swatches" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          </article>
+          <article class="card">
+            <h3>One button to pay</h3>
+            <p>The big button at the bottom is Telegram's own. No forms, no card numbers typed into a web page.</p>
+          </article>
+          <article class="card">
+            <h3>Prices you can trust</h3>
+            <p>Every order is priced again on the server before you pay. What you see is what you are charged.</p>
+          </article>
+          <article class="card">
+            <h3>Order status in the chat</h3>
+            <p>Accepted, in progress, ready. Updates arrive as normal messages, so you never have to check.</p>
+          </article>
+          <article class="card">
+            <h3>Fast on any phone</h3>
+            <p>The whole app is smaller than one photo. It opens instantly, even on a weak connection.</p>
+            <div class="meter" aria-hidden="true"><span style="--w:8%"><b>12 KB</b></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="faq">
+      <div class="wrap faq">
+        <div>
+          <p class="label">FAQ</p>
+          <h2>Questions people ask first.</h2>
+        </div>
+        <div class="faq__list">
+          <details open><summary>Do I need to install anything?</summary><p>No. It is a Mini App, so it opens inside Telegram on your phone or computer. If you have Telegram, you already have it.</p></details>
+          <details><summary>How do I pay?</summary><p>With Telegram Stars, TON, or a card through Telegram's payment screen. You can also choose to pay at pickup.</p></details>
+          <details><summary>Is my Telegram account safe?</summary><p>The app never sees your phone number or your messages. Telegram only shares your name and a signed proof that the request really comes from you.</p></details>
+          <details><summary>Can I change or cancel an order?</summary><p>Yes, until it is marked "in progress". Reply to the order message in the chat and it is done.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <div class="final__card">
+          <h2>Skip the queue tomorrow morning.</h2>
+          <p>Open the menu now and save your usual. It takes less than a minute.</p>
+          <a class="btn btn--tg open" href="https://t.me/your_bot/app">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.6 11.3 20.4 4.1c.8-.3 1.5.4 1.3 1.2l-3 14.2c-.2.9-1.2 1.2-1.9.7l-4.6-3.4-2.5 2.4c-.4.4-1.1.1-1.1-.5v-4.1l8.1-7.4-10 6.1-4.2-1.3c-.9-.3-.9-1.4.1-1.7Z"/></svg>
+            Open in Telegram
+          </a>
+          <p class="final__alt">On a computer? <a class="open" href="https://t.me/your_bot/app">Open the link</a> and Telegram will hand it to your phone.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <span>&copy; 2026 Brew Bar</span>
+      <nav aria-label="Footer"><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="https://t.me/your_support">Support</a></nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
